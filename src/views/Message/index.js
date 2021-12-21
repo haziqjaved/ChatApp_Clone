@@ -8,7 +8,6 @@ import {
     Input,
     Button,
     NativeBaseProvider,
-    Center,
     FlatList,
     Box,
     VStack,
@@ -18,36 +17,25 @@ import {
 
 export default function Message({route,navigation})
 {
-    
   const [value,setValue] = useState();
-
   const [msg,setMsg] = useState();
-  
   const {item} = route.params;
   const {id} = useSelector(state => state.userReducer.user);
   console.log(item);
-
-
-
- 
   const message = async() =>{
     await messageInChatRoom(value,item.id,id)
   }
   const handle = (text) => {
     setValue(text);
-    
-    
   };
     useEffect(async() => {
        onSnapshot(
           doc(db, "chatroom",item.id),
           { includeMetadataChanges: true },
           (doc) => {
-  
-          // let s = doc.data();
           let {messages}=doc.data()
            messages.sort(function(x, y){
-                    return x.timestamp - y.timestamp;
+                    return x.timestamp-y.timestamp;
            })
           console.log("i am aranged",messages);
           setMsg(messages)
@@ -66,9 +54,6 @@ return(
                   return (
                     <Box
                       borderBottomWidth="3"
-                      _dark={{
-                        borderColor: "gray.600",
-                      }}
                       borderColor="coolGray.200"
                       pl="6"
                       pr="5"
@@ -97,7 +82,6 @@ return(
                 {console.log((item.timestamp).toDate())}
                 {((item.timestamp).toDate()).toString()}
                 </Text>
-                       
                       </VStack>
                     </Box>
                   );
@@ -123,10 +107,7 @@ return(
             bg="black"
             onPress={message}
           > GO</Button> 
-        }
-      
-      />
-    
+        }/>    
       </NativeBaseProvider>
 );
 }

@@ -17,22 +17,6 @@ const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 
-// function SettingsScreen() {
-//   return (
-//     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-//       <Text>Settings!</Text>
-//     </View>
-//   );
-// }
-
-// function message() {
-//   return (
-//     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-//       <Text>Hello</Text>
-//     </View>
-//   );
-// }
-
 export default function MainNavigator() {
     
   const user = useSelector(state => state.userReducer.user)
