@@ -6,7 +6,6 @@ import { messageInChatRoom} from "../../config/firebase";
 import { doc, onSnapshot, getFirestore } from "firebase/firestore";
 import {
     Input,
-    Icon,
     Button,
     NativeBaseProvider,
     Center,
@@ -14,7 +13,6 @@ import {
     Box,
     VStack,
     Pressable,
-    AlertDialog
   } from "native-base";
  const db = getFirestore();
 
@@ -22,8 +20,7 @@ export default function Message({route,navigation})
 {
     
   const [value,setValue] = useState();
-  const [received,setReceived] = useState();
-  const [sent,setSent] = useState();
+
   const [msg,setMsg] = useState();
   
   const {item} = route.params;
@@ -38,7 +35,7 @@ export default function Message({route,navigation})
   }
   const handle = (text) => {
     setValue(text);
-    // 
+    
     
   };
     useEffect(async() => {
@@ -65,15 +62,15 @@ return(
             data={msg}
             renderItem={({ item }) => (
               <Pressable>
-                {({ isHovered, isFocused, isPressed }) => {
+                {({}) => {
                   return (
                     <Box
-                      borderBottomWidth="8"
+                      borderBottomWidth="3"
                       _dark={{
                         borderColor: "gray.600",
                       }}
                       borderColor="coolGray.200"
-                      pl="4"
+                      pl="6"
                       pr="5"
                       py="2"
                       ml={item["id"] === id ? "190":0}
@@ -123,7 +120,6 @@ return(
             size="md"
             rounded="full"
             w="1/6"
-            // h="sm"
             bg="black"
             onPress={message}
           > GO</Button> 

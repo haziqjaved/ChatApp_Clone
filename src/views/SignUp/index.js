@@ -1,20 +1,7 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import {  StyleSheet,View,Text} from 'react-native';
 import { TextInput,Button } from 'react-native-paper';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-// import {
-//   Box,
-//   Heading,
-//   VStack,
-//   FormControl,
-//   Input,
-//   Button,
-//   Center,
-//   Spinner,
-//   Icon,
-//   NativeBaseProvider,
-// } from "native-base"
-// import { MaterialIcons } from "@expo/vector-icons"
 import { useDispatch} from 'react-redux'
 import {registerUser} from '../../config/firebase'
 import {updateUser} from "../../store/actions/userAction"
@@ -88,71 +75,6 @@ export default function SignUp({navigation}) {
              
 
       </View>
-
-
-
-    // <NativeBaseProvider>
-    // <Center flex={1} px="3">
-    // <Box safeArea p="2" w="90%" maxW="290" py="8">
-    //   <Heading
-    //     size="lg"
-    //     color="coolGray.800"
-    //     _dark={{
-    //       color: "warmGray.50",
-    //     }}
-    //     fontWeight="semibold"
-    //   >
-    //     Welcome
-    //   </Heading>
-    //   <Heading
-    //     mt="1"
-    //     color="coolGray.600"
-    //     _dark={{
-    //       color: "warmGray.200",
-    //     }}
-    //     fontWeight="medium"
-    //     size="xs"
-    //   >
-    //     Sign up to continue!
-    //   </Heading>
-    //   <VStack space={3} mt="5">
-    //     <FormControl>
-    //       <FormControl.Label>Name</FormControl.Label>
-    //       <Input value={name} onChangeText={(text) => setName(text)}/>
-    //     </FormControl>
-    //     <FormControl>
-    //       <FormControl.Label>Contact No</FormControl.Label>
-    //       <Input keyboardType="numeric" maxLength={11} value={contact} onChangeText={(text) => setContact(text)}/>
-    //     </FormControl>
-    //     <FormControl>
-    //       <FormControl.Label>Email</FormControl.Label>
-    //       <Input keyboardType="email-address" value={email} onChangeText={(text) => setEmail(text)}/>
-    //     </FormControl>
-    //     <FormControl>
-    //       <FormControl.Label>Password</FormControl.Label>
-    //       <Input  type={hidePass ? 'password' : 'text'} value={password}
-    //       onChangeText={(text) => setPassword(text)} 
-    //     InputRightElement={
-    //       <Icon
-    //         as={<MaterialIcons name={hidePass ? "visibility-off" : "visibility" }  color="black"
-    //         onPress={() => setHidePass(!hidePass)}/>}
-    //         size={5}
-    //         mr="2"
-    //         color="black"
-    //       />
-    //     }
-       
-    //   />
-    
-    //     </FormControl>
-    //     {loading? <Spinner color="muted.900" size="lg"/>:
-    //     <Button mt="2" bg="black" onPress={signUp}>
-    //       Sign up
-    //     </Button>}
-    //   </VStack>
-    // </Box>
-    // </Center>
-    // </NativeBaseProvider>
   )
 }
 const styles = StyleSheet.create({
