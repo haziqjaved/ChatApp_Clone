@@ -2,17 +2,12 @@ import React, { useEffect,useState} from "react";
 import { View} from "react-native";
 import {useSelector } from 'react-redux';
 import {
-    Input,
-    Icon,
-    Button,
     NativeBaseProvider,
-    Center,
     FlatList,
     Box,
     VStack,
     Text,
     Pressable,
-    AlertDialog
   } from "native-base";
 
 import {getMessage} from '../../config/firebase';
